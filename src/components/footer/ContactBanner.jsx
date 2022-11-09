@@ -6,7 +6,7 @@ import ParagraphText from './ParagraphText'
 const ContactBannerStyles = styled.div`
   padding: 5rem 0;
   .contactBanner-wrapper {
-    background-color: gray;
+    background-color: #D3D3D3;
     border-radius: 12px;
     padding: 5rem 0rem;
     text-align: center;
@@ -31,7 +31,7 @@ function ContactBanner() {
             We love hearing from you!
           </ParagraphText>
           <h3 className="contactBanner-heading">Send Us an Email</h3>
-          <Button btnText="Contact Now"  />
+          <Button btnText="Contact Now"  btnLink="/contact"/>
         </div>
       </div>
       </ContactBannerStyles>
@@ -41,3 +41,5 @@ function ContactBanner() {
 export default ContactBanner
 
 
+
+    

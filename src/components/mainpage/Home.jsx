@@ -4,15 +4,15 @@ import Footer from "../footer/Footer";
 import Categories from "./Category";
 import "./Home.css";
 import SliderHome from "./Slider";
+import ShoppingCart from "../shoppingcart/ShoppingCart";
 
-const Home = () => {
+const Home = ({products,cartItems,onAdd,onRemove}) => {
   return (
     <>
       <section className="home">
         <div className="container d_flex">
           <Categories />
           <SliderHome />
-          <Footer />
         </div>
       </section>
     </>

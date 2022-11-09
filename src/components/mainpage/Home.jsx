@@ -11,7 +11,6 @@ const Home = ({products,cartItems,onAdd,onRemove}) => {
         <div className="container d_flex">
           <Categories />
           <SliderHome />
-          <ShoppingCart onAdd={onAdd} onRemove={onRemove}cartItems={cartItems} />
         </div>
       </section>
     </>

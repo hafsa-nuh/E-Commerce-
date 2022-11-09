@@ -11,8 +11,8 @@ import { products_data } from "../data";
 const Pages = () => {
   const [products,setProducts]=useState(products_data)
   const [cartItems,setCartItems]=useState([])
-
-
+  const [cartModal,setCartModal]=useState(false)
+ 
   const onAdd = (product) =>{
     const exist =cartItems.find(x => x.id === product.id);
     if(exist){
@@ -34,7 +34,7 @@ const Pages = () => {
   }
   return (
     <>
-    <Nav  cartItems={cartItems.length} brandName={"Tech Shop"}/>
+    <Nav showCartModal={(cartModal)=>setCartModal(cartModal)} cartModal={cartModal} cartItems={cartItems.length} brandName={"Tech Shop"} onAdd={onAdd} onRemove={onRemove}/>
     <Routes>
       <Route path="/" element={
     <>

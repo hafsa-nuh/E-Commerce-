@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=BhuTuka+Expanded+One&family=Oleo+Script+Swash+Caps&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  scroll-behavior: smooth;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.background {
+  background: #f6f9fc;
+  padding: 50px 0;
+}
+.container {
+  max-width: 90%;
+  margin: auto;
+}
+.d_flex {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+.c_flex {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.f_flex {
+  display: flex;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+li {
+  list-style: none;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.RText {
+  text-align-last: right;
+}
+input,
+button {
+  border: none;
+  outline: none;
+  background-color: none;
+}
+.row {
+  width: 50%;
+}
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background: #f3f5f9;
+  margin-left: 20px;
+  text-align: center;
+  border-radius: 50%;
+}
+.boxShadow {
+  box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
 }
 
-.App-link {
-  color: #61dafb;
+/*---------category----------*/
+.contentWidth {
+  width: 77%;
+}
+.category {
+  box-shadow: rgb(43 52 69 / 10%) 0px 4px 16px;
+  background-color: #fff;
+  width: 25%;
+  height: 55%;
+  padding: 20px 0;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.category img {
+  width: 70px;
+  height: 70px;
+  margin-top: 10px;
+  object-fit: contain;
+}
+.category span {
+  font-family: 'Oleo Script Swash Caps', cursive;
+  padding-top: 8px;
+  font-size: 1.5em;
+  margin: 10px 20px;
+  text-transform: capitalize;
+}
+.category .box {
+  transition: 0.5s;
+  padding: 0 20px;
+}
+.category .box:hover {
+  background-color: #ffe1e6;
+  cursor: pointer;
+}
+/*  was fot the mega menu dropdown , not able to make it work */
+.hide{
+  padding: 2.5em;
+  line-height: 2em;
+  top: 0;
+  left: 24%;
+  line-height: 2.5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-primary {
+  background: #e94560;
+  padding: 13px 40px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
 }
+.btn-primary:hover{
+  background-color: rgb(7, 128, 88);
+}
+.top {
+  margin-top: 80px;
+}
+.mtop {
+  margin-top: 40px;
+}
+
+

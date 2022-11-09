@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import FlashCard from "./FlashCard";
 import { ImFire } from "react-icons/im";
 import "./style.css";
 // import data from "./Data"
 
 const HotDeals = () => {
-    const [productItems ,setProductItems] = useState([])
-    useEffect(()=>{
-        fetch("http://localhost:9292/products")
-        .then(r => r.json())
-        .then(data => setProductItems(data))
-    },[])
   return (
     <>
       <section className="flash">
@@ -21,10 +15,7 @@ const HotDeals = () => {
             </i>
             <h1>Hot Deals</h1>
           </div>
-          {productItems.map((items)=> (
-            <FlashCard key={items.id} items={items} />
-          ))}
-          {/* <FlashCard productItems={productItems}/> */}
+            <FlashCard />
         </div>
       </section>
     </>

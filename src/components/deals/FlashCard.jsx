@@ -1,5 +1,11 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Slider from "react-slick"
+import {
+  AiTwotoneStar,
+  AiOutlineStar,
+  AiOutlinePlus,
+  AiOutlineHeart,
+} from "react-icons/ai";
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
@@ -23,11 +29,17 @@ const SamplePrevArrow = (props) => {
     </div>
   )
 }
-const FlashCard = ({items}) => {
-  // const [count, setCount] = useState(0)
-  // const increment = () => {
-  //   setCount(count + 1)
-  // }
+const FlashCard = () => {
+  const [productItems, setProductItems] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:9292/products")
+      .then((r) => r.json())
+      .then((data) => setProductItems(data));
+  }, []);
+  const [count, setCount] = useState(0)
+  const increment = () => {
+    setCount(count + 1)
+  }
   const settings = {
     dots: false,
     infinite: true,
@@ -41,41 +53,38 @@ const FlashCard = ({items}) => {
   return (
     <>
       <Slider {...settings}>
-        {/* {productItems.map((productItems) => {
-          return ( */}
-            <div className='box'>
-              <div className='product mtop'>
-                <div className='img'>
-                  <span className='discount'>{items.name}% Off</span>
+        {productItems.map((items , id) => {
+          return (
+            <div className="box">
+              <div className="product mtop" key={id}>
+                <div className="img">
+                  <span className="discount">{items.name}</span>
                   <img src={items.image_url} alt={items.name} />
-                  <div className='product-like'>
-                    {/* <label>{count}</label> <br /> */}
-                    {/* <i className='fa-regular fa-heart' onClick={increment}></i> */}
+                  <div className="product-like">
+                    <label>{count}</label> <br />
+                    <AiOutlineHeart onClick={increment} />
                   </div>
                 </div>
-                <div className='product-details'>
+                <div className="product-details">
                   <h3>{items.description}</h3>
-                  {/* <div className='rate'>
-                    <i className='fa fa-star'></i>
-                    <i className='fa fa-star'></i>
-                    <i className='fa fa-star'></i>
-                    <i className='fa fa-star'></i>
-                    <i className='fa fa-star'></i>
-                  </div> */}
-                  <div className='price'>
-                    <h4>${items.price}.00 </h4>
-                    {/* step : 3  
-                     if hami le button ma click garryo bahne 
-                    */}
-                    {/* <button onClick={() => addToCart(productItems)}>
-                      {/* <i className='fa fa-plus'></i> */}
-                    {/* </button> */} 
+                  <div className="rate">
+                    <AiTwotoneStar />
+                    <AiTwotoneStar />
+                    <AiTwotoneStar />
+                    <AiTwotoneStar />
+                    <AiOutlineStar />
+                  </div>
+                  <div className="price">
+                    <h4>Ksh {items.price}.00 </h4>
+                    <button>
+                      <AiOutlinePlus />
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
-          {/* ) */}
-        {/* })} */}
+          );
+        })}
       </Slider>
     </>
   )

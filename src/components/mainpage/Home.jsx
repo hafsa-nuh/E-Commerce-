@@ -5,8 +5,9 @@ import Categories from "./Category";
 import "./Home.css";
 import SliderHome from "./Slider";
 import ShoppingCart from "../shoppingcart/ShoppingCart";
+import NewArrivals from "../newarrivals/NewArrivals";
 
-const Home = ({products,cartItems,onAdd,onRemove}) => {
+const Home = ({ products, cartItems, onAdd, onRemove }) => {
   return (
     <>
       <section className="home">
@@ -14,6 +15,12 @@ const Home = ({products,cartItems,onAdd,onRemove}) => {
           <Categories />
           <SliderHome />
         </div>
+      </section>
+      <section>
+        <NewArrivals />
+      </section>
+      <section className="footer-section">
+        <Footer />
       </section>
     </>
   );

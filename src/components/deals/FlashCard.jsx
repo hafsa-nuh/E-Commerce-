@@ -31,11 +31,13 @@ const SamplePrevArrow = (props) => {
 }
 const FlashCard = () => {
   const [productItems, setProductItems] = useState([]);
+  console.log(productItems)
   useEffect(() => {
     fetch("http://localhost:9292/products")
       .then((r) => r.json())
       .then((data) => setProductItems(data));
   }, []);
+
   const [count, setCount] = useState(0)
   const increment = () => {
     setCount(count + 1)

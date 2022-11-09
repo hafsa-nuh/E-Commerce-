@@ -123,13 +123,13 @@ const Categories = () => {
         onMouseOver={handleMouseOver}
         onMouseOut={handleMouseOut}
       >
-        {data.map((value, index) => {
+        {data.map((value, id) => {
           return (
-            <div className="box f_flex" key={index}>
+            <div className="box f_flex" key={id}>
               <img src={value.cateImg} alt="" />
               <span>{value.cateName}</span>
               {isHovering && (
-                <ul className="hide">
+                <ul className="hide" key={id} >
                   <li>{value.category.type1}</li>
                   <li>{value.category.type2}</li>
                   <li>{value.category.type3}</li>

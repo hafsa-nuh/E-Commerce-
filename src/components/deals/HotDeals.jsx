@@ -2,7 +2,6 @@ import React from "react";
 import FlashCard from "./FlashCard";
 import { ImFire } from "react-icons/im";
 import "./style.css";
-// import data from "./Data"
 
 
 const HotDeals = () => {

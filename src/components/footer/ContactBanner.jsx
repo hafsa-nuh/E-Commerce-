@@ -31,7 +31,7 @@ function ContactBanner() {
             We love hearing from you!
           </ParagraphText>
           <h3 className="contactBanner-heading">Send Us an Email</h3>
-          <Button btnText="Contact Now" btnLink="/contact" />
+          <Button btnText="Contact Now"  />
         </div>
       </div>
       </ContactBannerStyles>
@@ -39,3 +39,5 @@ function ContactBanner() {
 }
 
 export default ContactBanner
+
+

@@ -4,6 +4,7 @@ import { ImFire } from "react-icons/im";
 import "./style.css";
 // import data from "./Data"
 
+
 const HotDeals = () => {
   return (
     <>

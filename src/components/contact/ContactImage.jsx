@@ -10,8 +10,7 @@ export default function ContactImage() {
     .contact-image{
         text-align: right;
         position: relative
-        flex: 2;
-        
+        flex: 2;       
     }
   `;
   return (

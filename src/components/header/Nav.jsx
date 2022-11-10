@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import ShoppingCart from "../shoppingcart/ShoppingCart";
 import "./header.css";
 
 
-export default function Nav({brandName,cartItems}) {
+export default function Nav({brandName,cartItems,cartModal,showCartModal,onAdd,onRemove}) {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
-  
+   console.log(cartModal)
   return (
     <nav className="navigation">
         
@@ -38,7 +39,26 @@ export default function Nav({brandName,cartItems}) {
       >
        
         <ul>
-          <li><Link to="/checkout"> My Cart :{cartItems}</Link></li>
+          <li onClick={()=>{
+            if(!cartModal){
+            showCartModal(true)
+            }else {
+              showCartModal(false)
+            }
+            }}>
+           My Cart :{cartItems}
+            { cartModal ?
+            
+          <div className="cart-box">
+           
+            <div className="whole-cart-window">
+            <ShoppingCart showCartModal={showCartModal} onAdd={onAdd} onRemove={onRemove}cartItems={cartItems} />
+           
+            </div>
+            </div> 
+            : null
+            }
+          </li>
           <li> <a><Link to="/">Home</Link></a>
           </li>
           <li>

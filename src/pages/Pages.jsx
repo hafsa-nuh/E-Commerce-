@@ -8,10 +8,11 @@ import { products_data } from "../data";
 import Header from "../components/header/Header"
 import Footer from "../components/footer/Footer"
 
+
 const Pages = () => {
-  const [products,setProducts]=useState(products_data)
+  const [products,setProducts]=useState([])
   const [cartItems,setCartItems]=useState([])
-  // const [cartModal,setCartModal]=useState(false)
+  const [cartModal,setCartModal]=useState(false)
  
   const onAdd = (product) =>{
     const exist =cartItems.find(x => x.id === product.id);
@@ -32,13 +33,30 @@ const Pages = () => {
     }
    
   }
+
+  const toggleCartModal = (value) => {
+    if(!value){
+      setCartModal(true)
+    }else{
+      setCartModal(false)
+    }
+  }
+function getProducts(products){
+  setProducts(products)
+}
+
+console.log(`From Page${products}`)
+
   return (
     <>
-    <Header  cartItems={cartItems.length} brandName={"Tech Shop"}/>
+    <Header toggleCartModal={toggleCartModal} cartModal={cartModal} cartItems={cartItems} numberOfItemsInCart={cartItems.length} brandName={"Tech Shop"} onAdd={onAdd} onRemove={onRemove}/>
     <Routes>
       <Route path="/" element={
     <>
        <Home products={products_data} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>
+
+       <HotDeals getProducts={getProducts}cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>
+
     </>
     }/>
       <Route path="about" element={<About />} />

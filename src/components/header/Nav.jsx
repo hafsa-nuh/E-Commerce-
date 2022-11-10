@@ -4,8 +4,9 @@ import { FaTimes, FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./header.css"
 
+import ShoppingCart from "../shoppingcart/ShoppingCart"
 
-export default function Nav({brandName,cartItems}) {
+export default function Nav(props) {
   const [mobileMenu, setMobileMenu] = useState(false);
   return (
     <>
@@ -49,6 +50,11 @@ export default function Nav({brandName,cartItems}) {
           </div>
         </div>
       </header>
+      <div style={{zIndex:2}}>
+        {
+                props.cartModal ? <ShoppingCart cartModal={props.cartModal}cartItems={props.cartItems} onAdd={props.onAdd} onRemove={props.onRemove}/> :null
+        }
+        </div>
     </>
   );
 

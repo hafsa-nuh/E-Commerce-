@@ -34,8 +34,9 @@ const SamplePrevArrow = (props) => {
 
 
 const FlashCard = (props) => {
-  //const [productItems, setProductItems] = useState([]);
-  const [productItems, setProductItems] = useState(products_data);
+  const [productItems, setProductItems] = useState([]);
+  // Below is sample data
+  //const [productItems, setProductItems] = useState(products_data);
   console.log(productItems)
   useEffect(() => {
     fetch("http://localhost:9292/products")

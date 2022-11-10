@@ -1,32 +1,35 @@
-import React, { useEffect, useState } from "react"
-import Slider from "react-slick"
+import React, { useEffect, useState } from "react";
+import Slider from "react-slick";
 import {
   AiTwotoneStar,
   AiOutlineStar,
   AiOutlinePlus,
-  AiOutlineHeart,
+  AiFillHeart,
 } from "react-icons/ai";
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 import {products_data} from './data'
 
 const SampleNextArrow = (props) => {
-  const { onClick } = props
+  const { onClick } = props;
   return (
-    <div className='control-btn' onClick={onClick}>
-      <button className='next'>
-        <i className='fa fa-long-arrow-alt-right'></i>
+    <div className="control-btn" onClick={onClick}>
+      <button className="next">
+        <FaLongArrowAltRight className="next-btn" />
+        {/* <i className='fa fa-long-arrow-alt-right'></i> */}
       </button>
     </div>
-  )
-}
+  );
+};
 const SamplePrevArrow = (props) => {
-  const { onClick } = props
+  const { onClick } = props;
   return (
-    <div className='control-btn' onClick={onClick}>
-      <button className='prev'>
-        <i className='fa fa-long-arrow-alt-left'></i>
+    <div className="control-btn" onClick={onClick}>
+      <button className="prev">
+        <FaLongArrowAltLeft className="next-btn" />
+        {/* <i className='fa fa-long-arrow-alt-left'></i> */}
       </button>
     </div>
   )
@@ -44,10 +47,10 @@ const FlashCard = (props) => {
       .then((data) => setProductItems(data));
   }, []);
 
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   const increment = () => {
-    setCount(count + 1)
-  }
+    setCount(count + 1);
+  };
   const settings = {
     dots: false,
     infinite: true,
@@ -56,32 +59,39 @@ const FlashCard = (props) => {
     slidesToScroll: 1,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
-  }
+  };
 
-  props.getProducts(products_data)
+  props.getProducts(productItems)
   return (
     <>
       <Slider {...settings}>
+
         { Array.isArray(productItems) ? productItems.map((items , id) => {
+
           return (
             <div className="box">
               <div className="product mtop" key={id}>
                 <div className="img">
-                  <span className="discount">{items.name}</span>
+                  {/* <span className="discount">{items.name}</span> */}
                   <img src={items.image_url} alt={items.name} />
-                  <div className="product-like">
-                    <label>{count}</label> <br />
-                    <AiOutlineHeart onClick={increment} />
-                  </div>
                 </div>
                 <div className="product-details">
-                  <h3>{items.description}</h3>
+                  <div className="product-like">
+                    <label>{count}</label> <br />
+                    <AiFillHeart className="heart" onClick={increment} />
+                  </div>
+                  <br />
+                  <h3>{items.name}</h3>
+                  {/* <br /> */}
+                  <div className="paragra">
+                    <p>{items.description}</p>
+                  </div>
                   <div className="rate">
-                    <AiTwotoneStar />
-                    <AiTwotoneStar />
-                    <AiTwotoneStar />
-                    <AiTwotoneStar />
-                    <AiOutlineStar />
+                    <AiTwotoneStar className="icons" />
+                    <AiTwotoneStar className="icons" />
+                    <AiTwotoneStar className="icons" />
+                    <AiTwotoneStar className="icons" />
+                    <AiOutlineStar className="icon" />
                   </div>
                   <div className="price">
                     <h4>Ksh {items.price}.00 </h4>
@@ -96,7 +106,7 @@ const FlashCard = (props) => {
         }) :null}
       </Slider>
     </>
-  )
-}
+  );
+};
 
-export default FlashCard
+export default FlashCard;

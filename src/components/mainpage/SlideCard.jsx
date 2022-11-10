@@ -1,5 +1,5 @@
 import React from "react"
-import Sdata from "./Sdata"
+import {Sdata} from "../../data";
 import Slider from "react-slick"
 // https://react-slick.neostack.com/docs/get-started/
 import "slick-carousel/slick/slick.css"

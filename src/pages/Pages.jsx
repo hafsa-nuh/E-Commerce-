@@ -5,8 +5,8 @@ import Home from "../components/mainpage/Home";
 import About from '../components/about/About'
 import Contact from '../components/contact/Contact'
 import Checkout from '../components/checkout/Checkout'
-import Nav from '../components/header/Nav'
 import { products_data } from "../data";
+import Header from "../components/header/Header";
 
 const Pages = () => {
   const [products,setProducts]=useState(products_data)
@@ -34,7 +34,7 @@ const Pages = () => {
   }
   return (
     <>
-    <Nav  cartItems={cartItems.length} brandName={"Tech Shop"}/>
+    <Header  cartItems={cartItems.length} brandName={"Tech Shop"}/>
     <Routes>
       <Route path="/" element={
     <>

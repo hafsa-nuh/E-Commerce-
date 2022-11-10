@@ -160,7 +160,7 @@ export const Sdata = [
   },
 ];
 
-export const categories = [
+export const discount = [
   {
     id: 1,
     img: "https://news.uga.edu/wp-content/uploads/2022/03/37143-002.jpg",

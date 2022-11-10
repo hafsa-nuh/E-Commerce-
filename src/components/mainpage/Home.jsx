@@ -7,6 +7,7 @@ import SliderHome from "./Slider";
 import NewArrivals from "../newarrivals/NewArrivals";
 import HotDeals from "../deals/HotDeals";
 import Discount from "../discount/Discount";
+import Annocument from "../announcement/Announce";
 const Home = ({ products, cartItems, onAdd, onRemove }) => {
   return (
     <>
@@ -19,6 +20,7 @@ const Home = ({ products, cartItems, onAdd, onRemove }) => {
       <HotDeals />
       <NewArrivals />
       <Discount/>
+      <Annocument />
       <ContactBanner />
       {/* <section>
       </section>

@@ -40,7 +40,6 @@ const Pages = () => {
       <Route path="/" element={
     <>
        <Home products={products_data} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>
-       <HotDeals/>
     </>
     }/>
       <Route path="about" element={<About />} />

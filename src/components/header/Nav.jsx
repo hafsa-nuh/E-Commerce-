@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import { BsBorderStyle, BsChevronDown } from "react-icons/bs";
 import { FaTimes, FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import "./header.css"
 
-
 export default function Nav({brandName,cartItems}) {
   const [mobileMenu, setMobileMenu] = useState(false);
+
+
   return (
     <>
       <header className="header">
@@ -16,7 +17,7 @@ export default function Nav({brandName,cartItems}) {
               <BsBorderStyle className="icons" />
             </span>
             <h4>
-              Categories <BsChevronDown className="icons" />
+              Categories<BsChevronDown className="icons" />
             </h4>
           </div>
           <div className="navlink">
@@ -27,7 +28,7 @@ export default function Nav({brandName,cartItems}) {
               onClick={() => setMobileMenu(false)}
             >
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">Home </Link>
               </li>
               <li>
                 <Link to="/about">About</Link>

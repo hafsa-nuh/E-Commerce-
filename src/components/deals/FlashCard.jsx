@@ -9,6 +9,8 @@ import {
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
+import {products_data} from './data'
+
 const SampleNextArrow = (props) => {
   const { onClick } = props
   return (
@@ -29,8 +31,11 @@ const SamplePrevArrow = (props) => {
     </div>
   )
 }
-const FlashCard = () => {
-  const [productItems, setProductItems] = useState([]);
+
+
+const FlashCard = (props) => {
+  //const [productItems, setProductItems] = useState([]);
+  const [productItems, setProductItems] = useState(products_data);
   console.log(productItems)
   useEffect(() => {
     fetch("http://localhost:9292/products")
@@ -52,10 +57,11 @@ const FlashCard = () => {
     prevArrow: <SamplePrevArrow />,
   }
 
+  props.getProducts(products_data)
   return (
     <>
       <Slider {...settings}>
-        {productItems.map((items , id) => {
+        { Array.isArray(productItems) ? productItems.map((items , id) => {
           return (
             <div className="box">
               <div className="product mtop" key={id}>
@@ -78,15 +84,15 @@ const FlashCard = () => {
                   </div>
                   <div className="price">
                     <h4>Ksh {items.price}.00 </h4>
-                    <button>
-                      <AiOutlinePlus />
+                    <button onClick={()=>props.onAdd(items)}>
+                      <AiOutlinePlus  />
                     </button>
                   </div>
                 </div>
               </div>
             </div>
           );
-        })}
+        }) :null}
       </Slider>
     </>
   )

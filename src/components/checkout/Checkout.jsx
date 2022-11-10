@@ -25,7 +25,7 @@ function Checkout ({cartItems}){
                         <li style={{fontSize:'30px'}}>{cart.name}</li>
                         <li><img src={cart.image_url}/></li>
                         <li>{cart.price}</li>
-                        <li>{cart.category}</li>
+                        <li>{cart.description}</li>
                          </div>
                         );
                     })

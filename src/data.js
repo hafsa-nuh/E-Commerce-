@@ -159,3 +159,21 @@ export const Sdata = [
     cover: "https://i.postimg.cc/t412qfzf/camera9.png",
   },
 ];
+
+export const discount = [
+  {
+    id: 1,
+    img: "https://news.uga.edu/wp-content/uploads/2022/03/37143-002.jpg",
+    title: "LIVE VEDIO GAMES",
+  },
+  {
+    id: 2,
+    img: "https://www.popsci.com/uploads/2021/06/23/gaming-pc-setup.jpg?auto=webp",
+    title: "PLAYSTATION",
+  },
+  {
+    id: 3,
+    img: "https://live.staticflickr.com/65535/52142767031_c9f5b8ebf4_b.jpg",
+    title: "VIDEO GAMES",
+  },
+];

@@ -1,6 +1,5 @@
 import React,{useState} from "react";
 import {Routes,Route } from "react-router-dom";
-import HotDeals from "../components/deals/HotDeals";
 import Home from "../components/mainpage/Home";
 import About from '../components/about/About'
 import Contact from '../components/contact/Contact'
@@ -55,7 +54,9 @@ console.log(`From Page${products}`)
       <Route path="/" element={
     <>
        <Home products={products_data} cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>
+
        <HotDeals getProducts={getProducts}cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>
+
     </>
     }/>
       <Route path="about" element={<About />} />

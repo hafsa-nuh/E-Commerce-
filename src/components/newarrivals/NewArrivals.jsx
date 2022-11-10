@@ -19,10 +19,25 @@ function NewArrivals() {
     margin: "0 auto",
     paddingBottom: "3rem"
   };
+  const image ={
+    width: '40px',
+    height: '40px',
+    marginTop: '5px'
+  }
+  const h4 ={
+    fontWeight: 400
+  }
   return (
-    <div>
+    <div style={{ background: "#f6f9fc" }}>
       <div style={containerStyles}>
-      <h1>New Arrivals</h1>
+        <div className="heading-left">
+          <img
+            src="https://img.icons8.com/glyph-neue/64/26e07f/new.png"
+            alt=""
+            style={image}
+          />
+          <h2 style={h4}>New Arrivals </h2>
+        </div>
         <ImageSlider slides={slides} />
       </div>
     </div>

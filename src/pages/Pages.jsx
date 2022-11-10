@@ -1,6 +1,5 @@
 import React,{useState} from "react";
 import {Routes,Route } from "react-router-dom";
-import HotDeals from "../components/deals/HotDeals";
 import Home from "../components/mainpage/Home";
 import About from '../components/about/About'
 import Contact from '../components/contact/Contact'

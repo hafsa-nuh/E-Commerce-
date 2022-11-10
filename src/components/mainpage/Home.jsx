@@ -22,10 +22,6 @@ const Home = ({ products, cartItems, onAdd, onRemove }) => {
       <Discount/>
       <Annocument />
       <ContactBanner />
-      {/* <section>
-      </section>
-      <section className="footer-section">
-      </section> */}
     </>
   );
 };

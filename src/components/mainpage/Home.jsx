@@ -1,10 +1,9 @@
 import React from "react";
-import Footer from "../footer/Footer";
-// import ContactBanner from "../footer/ContactBanner";
+ import ContactBanner from "../footer/ContactBanner";
 import Categories from "./Category";
 import "./Home.css";
 import SliderHome from "./Slider";
-import ShoppingCart from "../shoppingcart/ShoppingCart";
+// import ShoppingCart from "../shoppingcart/ShoppingCart";
 import NewArrivals from "../newarrivals/NewArrivals";
 
 const Home = ({ products, cartItems, onAdd, onRemove }) => {
@@ -20,7 +19,7 @@ const Home = ({ products, cartItems, onAdd, onRemove }) => {
         <NewArrivals />
       </section>
       <section className="footer-section">
-        <Footer />
+        <ContactBanner />
       </section>
     </>
   );

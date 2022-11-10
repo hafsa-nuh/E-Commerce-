@@ -5,7 +5,7 @@ function Footer() {
   return (
 
 <div className="main-footer">
-<div>
+<div id="container">
   <div className="row">
     {/* Column1 */}
     <div className="column">

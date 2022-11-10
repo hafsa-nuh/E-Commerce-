@@ -6,13 +6,14 @@ import About from '../components/about/About'
 import Contact from '../components/contact/Contact'
 import Checkout from '../components/checkout/Checkout'
 import { products_data } from "../data";
-import Header from "../components/header/Header";
+import Header from "../components/header/Header"
+import Footer from "../components/footer/Footer"
 
 const Pages = () => {
   const [products,setProducts]=useState(products_data)
   const [cartItems,setCartItems]=useState([])
-
-
+  // const [cartModal,setCartModal]=useState(false)
+ 
   const onAdd = (product) =>{
     const exist =cartItems.find(x => x.id === product.id);
     if(exist){
@@ -46,7 +47,7 @@ const Pages = () => {
       <Route path="contact" element={<Contact />} />
       <Route path="checkout" element={<Checkout  cartItems={cartItems}/>} />
     </Routes>
-
+    <Footer />
     </>
   );
 };

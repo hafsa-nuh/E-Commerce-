@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ContactImage from "./ContactImage";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Reviews from "./Reviews";
 
 const FormStyle = styled.form`
   width: 100%;
@@ -97,11 +98,12 @@ const notify = () => toast("Your message has been sent")
                 />
               </label>
             </div>
-            <button type="submit" onClick={notify}>Send</button>
+            <button type="submit" onSubmit={notify}>Send</button>
             <ToastContainer />
           </div>
           <ContactImage />
         </div>
+        <Reviews />
       </FormStyle>
     </>
   );

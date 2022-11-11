@@ -2,7 +2,7 @@ import React from "react";
 import { FaSearch, FaUserAlt, FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Search = (props) => {
+const Search = ({ cartItem }) => {
   window.addEventListener("scroll", function () {
     const search = document.querySelector(".search");
     search.classList.toggle("active", window.scrollY > 100);
@@ -23,11 +23,11 @@ const Search = (props) => {
           </div>
           <div className="icon f_flex width">
             <FaUserAlt className="icons icon-circle" />
-            <div onClick={()=>{props.toggleCartModal(props.cartModal)}} className="cart">
-              
+            <div className="cart">
+              <Link to="cart">
                 <FaShoppingCart className="icons icon-circle" />
-                <span >{props.numberOfItemsInCart ? props.numberOfItemsInCart : 0}</span>
-             
+                <span>{cartItem.length === 0 ? "" : cartItem.length}</span>
+              </Link>
             </div>
           </div>
         </div>

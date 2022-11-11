@@ -10,8 +10,6 @@ import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import {products_data} from './data'
-
 const SampleNextArrow = (props) => {
   const { onClick } = props;
   return (
@@ -36,11 +34,11 @@ const SamplePrevArrow = (props) => {
 }
 
 
-const FlashCard = (props) => {
+const FlashCard = ({ addToCart }) => {
   const [productItems, setProductItems] = useState([]);
   // Below is sample data
   //const [productItems, setProductItems] = useState(products_data);
-  console.log(productItems)
+  console.log(productItems);
   useEffect(() => {
     fetch("http://localhost:9292/products")
       .then((r) => r.json())
@@ -65,45 +63,44 @@ const FlashCard = (props) => {
   return (
     <>
       <Slider {...settings}>
-
-        { Array.isArray(productItems) ? productItems.map((items , id) => {
-
-          return (
-            <div className="box">
-              <div className="product mtop" key={id}>
-                <div className="img">
-                  {/* <span className="discount">{items.name}</span> */}
-                  <img src={items.image_url} alt={items.name} />
+        {Array.isArray(productItems)
+          ? productItems.map((items, id) => {
+              return (
+                <div className="box">
+                  <div className="product mtop" key={id}>
+                    <div className="img">
+                      <img src={items.image_url} alt={items.name} />
+                    </div>
+                    <div className="product-details">
+                      <div className="product-like">
+                        <label>{count}</label> <br />
+                        <AiFillHeart className="heart" onClick={increment} />
+                      </div>
+                      <br />
+                      <h3>{items.name}</h3>
+                      {/* <br /> */}
+                      <div className="paragra">
+                        <p>{items.description}</p>
+                      </div>
+                      <div className="rate">
+                        <AiTwotoneStar className="icons" />
+                        <AiTwotoneStar className="icons" />
+                        <AiTwotoneStar className="icons" />
+                        <AiTwotoneStar className="icons" />
+                        <AiOutlineStar className="icon" />
+                      </div>
+                      <div className="price">
+                        <h4>Ksh {items.price}.00 </h4>
+                        <button onClick={() => addToCart(items)}>
+                          <AiOutlinePlus />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="product-details">
-                  <div className="product-like">
-                    <label>{count}</label> <br />
-                    <AiFillHeart className="heart" onClick={increment} />
-                  </div>
-                  <br />
-                  <h3>{items.name}</h3>
-                  {/* <br /> */}
-                  <div className="paragra">
-                    <p>{items.description}</p>
-                  </div>
-                  <div className="rate">
-                    <AiTwotoneStar className="icons" />
-                    <AiTwotoneStar className="icons" />
-                    <AiTwotoneStar className="icons" />
-                    <AiTwotoneStar className="icons" />
-                    <AiOutlineStar className="icon" />
-                  </div>
-                  <div className="price">
-                    <h4>Ksh {items.price}.00 </h4>
-                    <button onClick={()=>props.onAdd(items)}>
-                      <AiOutlinePlus  />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        }) :null}
+              );
+            })
+          : null}
       </Slider>
     </>
   );

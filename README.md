@@ -1,8 +1,33 @@
-# Getting Started with Create React App
+### ICON TECH SHOP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Built by:
+# Group Name: The Icons
 
-## Available Scripts
+`Members`
+-Hafsa Nuh (scrum master)
+-Dennis Muturi
+-Beulah Mathenge
+
+# Github link: https://github.com/hafsa-nuh/E-Commerce-
+             :https://github.com/Beulah-Matt/phase-3-project-sinatra-backend   
+
+# The Idea
+We thought of doing an e-commerce site since there aren't many that are simply user friendly and to also build on our knowledge as this project touched on almost every topic we have covered. 
+We have components for various pages in our application, well labeled and easy to use. 
+
+# Design
+There is a landing page that points to all of the site's features.
+Well designed NavBar and footer, complete with routes to the available pages. Still on routing, some buttons have routes too, please click to find out!
+We have reusable components like the title and paragraph text, creating some uniformity. 
+For a great user experience, the UI/UX team used several slide styles, among them SliderJs and SwitchTransition component. 
+
+# End Points
+This being the first full stack project we have worked on, we were excited to see the the front end come together using an API we had created. Here are our endpoints for the crud operations:
+`Products : http://localhost:9292/products`
+`Customers: http://localhost:9292/customers`
+`Orders: http://localhost:9292/orders`
+
+# Running the Project
 
 In the project directory, you can run:
 

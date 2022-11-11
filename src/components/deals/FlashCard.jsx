@@ -61,7 +61,7 @@ const FlashCard = (props) => {
     prevArrow: <SamplePrevArrow />,
   };
 
-  props.getProducts(productItems)
+  // props.getProducts(productItems)
   return (
     <>
       <Slider {...settings}>

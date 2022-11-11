@@ -7,6 +7,7 @@ import Checkout from '../components/checkout/Checkout'
 import { products_data } from "../data";
 import Header from "../components/header/Header"
 import Footer from "../components/footer/Footer"
+import HotDeals from "../components/deals/HotDeals";
 
 
 const Pages = () => {

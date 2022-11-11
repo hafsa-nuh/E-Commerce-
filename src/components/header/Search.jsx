@@ -28,7 +28,7 @@ const Search = () => {
             <Link to="/login"><FaUserAlt className="icons icon-circle" /></Link>
             </div>
             <div className="cart">
-              <Link to="cart">
+              <Link to="checkout">
                 <FaShoppingCart className="icons icon-circle" />
                 <span>0</span>
               </Link>

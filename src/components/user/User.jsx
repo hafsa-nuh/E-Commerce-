@@ -1,6 +1,8 @@
-import { useContext } from "react";
+import { useState,useContext } from "react";
 import { UserContext } from "../../services/UserContext";
 function User(){
+  const [name,setName]=useState("")
+  const [email,setEmail]=useState("")
   const {user,
     setUser,
     isLogin,
@@ -9,14 +11,20 @@ function User(){
     register,
     logout } =useContext(UserContext)
 
+    const handleSubmit=(e)=>{
+        e.preventDefault()
+        let username=name;
+        let useremail=email;
+        login(username,useremail)
+    }
     return (
     <>
     { !isLogin ?
     <div>
       <h1>Login</h1>
-      <form> 
-      <input type="text" placeholder="Enter Name"/>
-      <input type="email" placeholder="Enter Email"/>
+      <form onSubmit={(e)=>handleSubmit(e)}> 
+      <input type="text" placeholder="Enter Name" value={name} onChange={(e) => setName(e.target.value)}/>
+      <input type="email" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
       <input type="submit" value="Login"/>
      </form>
      </div>

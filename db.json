@@ -19,6 +19,50 @@
       "name": "Dennis Muturi",
       "email": "dennismuturi1@gmail.com",
       "id": 4
+    },
+    {
+      "name": "peter",
+      "email": "peter@gmail.com",
+      "id": 5
+    },
+    {
+      "name": "cate",
+      "email": "cate@gmail.com",
+      "id": 6
+    }
+  ],
+  "orders": [
+    {
+      "orderId": 1,
+      "userId": 5,
+      "orders": [
+        {
+          "product": 1
+        },
+        {
+          "product": 2
+        },
+        {
+          "product": 3
+        }
+      ],
+      "id": 1
+    },
+    {
+      "orderId": 1,
+      "userId": 5,
+      "orders": [
+        {
+          "product": 1
+        },
+        {
+          "product": 2
+        },
+        {
+          "product": 3
+        }
+      ],
+      "id": 2
     }
   ]
 }

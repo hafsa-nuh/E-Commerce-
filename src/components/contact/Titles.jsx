@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const TitlesStyle= styled.div
-`
+const TitlesStyle= styled.div`
     text-align: center;
     p {
       font-family: 'Monospace';
@@ -23,7 +22,6 @@ const TitlesStyle= styled.div
         font-size: 3.6rem;
       }
     }
-  }
 `;
 //destructuring the heading and subheading and using default values
 function Titles({subtitle = 'short intro', title= 'A Title'}) {

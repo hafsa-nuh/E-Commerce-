@@ -10,12 +10,12 @@ const ReviewSecStyles = styled.div`
 padding: 10rem 0;
 text-align: center;
 .review-wrapper{
-    max-width 700px;
+    max-width: 700px;
     margin: 0 auto;
 }
 .review-info{
-    width: 100%
-    heigh: fit-content;
+    width: 100%;
+    height: fit-content;
     padding: 3rem;
     background-color: rgb(208, 201, 201);
     border-radius: 12px;
@@ -28,7 +28,7 @@ text-align: center;
 }
 .review-name{
     margin-top: 4rem;
-    font-family: 'Monospace'
+    font-family: 'Monospace';
     font-size: 2.2rem;
 }
 .review-title{
@@ -61,7 +61,7 @@ text-align: center;
 }
 .fade-enter-active{
     opacity: 1;
-    transform: scale(1)
+    transform: scale(1);
     transition: 250ms ease-in;
     transition-property: opacity, transform;
 }
@@ -71,7 +71,7 @@ text-align: center;
 }
 .fade-exit-active{
     opacity: 0;
-    transform: scale(.96)
+    transform: scale(.96);
     transition: 250ms ease-in opacity;
     transition-property: opacity, transform;
 }

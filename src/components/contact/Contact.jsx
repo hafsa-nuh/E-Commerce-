@@ -48,6 +48,16 @@ const FormStyle = styled.form`
     justify-content: space-between;
     align-items: center;
   }
+  @media screen and (max-width: 650px) {
+    .contact-section {
+      width: 100%;
+      display: block;
+    }
+    .contact-form {
+      width: 100%;
+      display: block;
+    }
+  }
 `;
 
 export default function Contact() {

@@ -39,8 +39,8 @@ function Login(){
             margin:'auto'
         }}>
     { !isLogin ?
-    <div>
-      <h1>Login</h1>
+    <div   style={{marginTop:'100px',marginBottom:'100px'}}>
+      <h1 style={{ display:'flex',justifyContent:'center',marginBottom:'20px'}}>Login</h1>
       {
         message ?
         <>
@@ -52,11 +52,18 @@ function Login(){
       error?
       <h2 style={{color:'red'}}>{error}</h2> :null
       }
-      <form onSubmit={(e)=>handleSubmit(e)}> 
-      <div style={{display:'block'}}>
+      <form  onSubmit={(e)=>handleSubmit(e)}> 
+        <div style={{display:'flex',fontSize:'15px',marginTop:'20px',marginBottom:'20px'}}>
+            <label style={{color:'green'}}> Name:   </label>
       <input type="text" placeholder="Enter Name" value={name} onChange={(e) => setName(e.target.value)}/>
+        </div>
+        <div style={{display:'flex',fontSize:'15px',marginTop:'20px',marginBottom:'20px'}}>
+            <label style={{color:'green'}}>Email:  </label>
       <input type="email" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-      <input  style={{color:'red'}} type="submit" value="Login"/>
+      </div>
+      <div style={{display:'flex',fontSize:'15px',marginTop:'20px',marginBottom:'20px'}}>
+         
+      <input  style={{display:'flex',fontSize:'15px',background:'red',color:'white',flex:'right'}} type="submit" value="Login"/>
       </div>
      </form>
      </div>

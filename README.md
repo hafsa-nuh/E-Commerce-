@@ -9,7 +9,8 @@
 -Beulah Mathenge
 
 # Github link: https://github.com/hafsa-nuh/E-Commerce-
-             :https://github.com/Beulah-Matt/phase-3-project-sinatra-backend   
+             :https://github.com/Beulah-Matt/phase-3-project-sinatra-backend 
+# Presentation: https://docs.google.com/presentation/d/1WhDjEp9l3l6LUlNj-c7CZr1zMDt_dRZDOxHSxbPTfbE/edit#slide=id.g70c71c87bd_0_763  
 
 # The Idea
 We thought of doing an e-commerce site since there aren't many that are simply user friendly and to also build on our knowledge as this project touched on almost every topic we have covered. 

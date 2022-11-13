@@ -6,6 +6,7 @@ function Register(){
 const navigate=useNavigate()
   const [name,setName]=useState("")
   const [email,setEmail]=useState("")
+  const [error,setError]=useState("")
   const {user,
     setUser,
     isLogin,
@@ -37,15 +38,23 @@ const navigate=useNavigate()
             margin:'auto'
         }}>
     { !isLogin ?
-    <div >
-       <h1>Register</h1>
+    <div style={{marginTop:'100px',marginBottom:'100px'}}>
+       <h1  style={{ display:'flex',justifyContent:'center',marginBottom:'20px'}}>Register</h1>
        {registerMessage ?
         <h2 style={{color:'gren'}}>{registerMessage}</h2> :null
         }
-      <form style={{display:'block'}}onSubmit={(e)=>handleSubmit(e)}> 
+      <form style={{marginTop:'100',marginBottom:'100px'}} onSubmit={(e)=>handleSubmit(e)}> 
+      <div style={{display:'flex',fontSize:'15px',marginTop:'20px',marginBottom:'20px'}}>
+            <label style={{color:'green'}}> Name:   </label>
       <input type="text" placeholder="Enter Name" value={name} onChange={(e) => setName(e.target.value)}/>
+      </div>
+      <div style={{display:'flex',fontSize:'15px',marginTop:'20px',marginBottom:'20px'}}>
+            <label style={{color:'green'}}>Email:  </label>
       <input type="email" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-      <input  style={{color:'red'}} type="submit" value="Register"/>
+      </div>
+      <div style={{marginTop:'20px',marginBottom:'20px'}}>
+      <input  style={{background:'red',color:'white'}} type="submit" value="Register"/>
+      </div>
      </form>
      </div>
      : <h1>You are logged In as 

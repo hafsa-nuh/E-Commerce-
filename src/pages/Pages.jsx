@@ -9,6 +9,8 @@ import Header from "../components/header/Header"
 import Footer from "../components/footer/Footer"
 // import HotDeals from "../components/deals/HotDeals";
 import Cart from "../components/addtocart/Cart"
+import Login from "../components/login/Login"
+import Register from "../components/register/Register"
 
 
 const Pages = () => {
@@ -99,6 +101,8 @@ const Pages = () => {
         />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
         <Route path="checkout" element={<Checkout cartItems={cartItem} />} />
       </Routes>
       <Footer />

@@ -24,9 +24,9 @@ For a great user experience, the UI/UX team used several slide styles, among the
 
 # End Points
 This being the first full stack project we have worked on, we were excited to see the the front end come together using an API we had created. Here are our endpoints for the crud operations:
-`Products : http://localhost:9292/products`
-`Customers: http://localhost:9292/customers`
-`Orders: http://localhost:9292/orders`
+`Products : https://aqueous-castle-47869.herokuapp.com/products`
+`Customers: https://aqueous-castle-47869.herokuapp.com/customers`
+`Orders: https://aqueous-castle-47869.herokuapp.com/orders`
 
 # Running the Project
 

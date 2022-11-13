@@ -25,7 +25,10 @@ const Search = () => {
           </div>
           <div className="icon f_flex width">
             <div>
-            <Link to="/login"><FaUserAlt className="icons icon-circle" /></Link>
+            <Link to="/login">
+              <small><FaUserAlt className="icons icon-circle" /></small>
+            <span>{user.email}</span>
+            </Link>
             </div>
             <div className="cart">
               <Link to="checkout">

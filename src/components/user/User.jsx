@@ -18,14 +18,26 @@ function User(){
         login(username,useremail)
     }
     return (
+
     <>
+    <div style={{
+        display :'flex',
+        justifyContent:'center',
+        margin:'auto'
+        }}>
+    <div style={
+        {
+            display:'block',
+            justifyContent:'center',
+            margin:'auto'
+        }}>
     { !isLogin ?
     <div>
       <h1>Login</h1>
       <form onSubmit={(e)=>handleSubmit(e)}> 
       <input type="text" placeholder="Enter Name" value={name} onChange={(e) => setName(e.target.value)}/>
       <input type="email" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-      <input type="submit" value="Login"/>
+      <input  style={{color:'red'}} type="submit" value="Login"/>
      </form>
      </div>
      : <h1>You are already logged In as 
@@ -40,6 +52,8 @@ function User(){
     {
         
     }
+    </div>
+    </div>
      </>
     );
 }

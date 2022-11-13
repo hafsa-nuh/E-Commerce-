@@ -14,7 +14,7 @@ import Register from "../components/register/Register"
 import ProductsDetails from "../components/products-details/ProductsDetails";
 
 // making the path global
-const url = "http://localhost:9292/products";
+const url = "https://aqueous-castle-47869.herokuapp.com/products";
 const Pages = () => {
   // moved the fetchin here
   const [productItems, setProductItems] = useState([]);

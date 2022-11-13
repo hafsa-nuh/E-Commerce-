@@ -42,7 +42,9 @@ const smallImage = [
   useEffect(() => {
     const getProduct = async () => {
       setLoading(true);
-      const response = await fetch(`http://localhost:9292/products/${id}`);
+      const response = await fetch(
+        `https://aqueous-castle-47869.herokuapp.com/products/${id}`
+      );
       setProduct(await response.json());
       setLoading(false);
     };

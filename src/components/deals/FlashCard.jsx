@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import {
   AiTwotoneStar,
@@ -9,7 +9,7 @@ import {
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const SampleNextArrow = (props) => {
   const { onClick } = props;
@@ -17,7 +17,6 @@ const SampleNextArrow = (props) => {
     <div className="control-btn" onClick={onClick}>
       <button className="next">
         <FaLongArrowAltRight className="next-btn" />
-        {/* <i className='fa fa-long-arrow-alt-right'></i> */}
       </button>
     </div>
   );
@@ -28,12 +27,10 @@ const SamplePrevArrow = (props) => {
     <div className="control-btn" onClick={onClick}>
       <button className="prev">
         <FaLongArrowAltLeft className="next-btn" />
-        {/* <i className='fa fa-long-arrow-alt-left'></i> */}
       </button>
     </div>
   )
 }
-
 
 const FlashCard = ({ addToCart, productItems }) => {
   const [count, setCount] = useState(0);
@@ -50,7 +47,6 @@ const FlashCard = ({ addToCart, productItems }) => {
     prevArrow: <SamplePrevArrow />,
   };
 
-  // props.getProducts(productItems)
   return (
     <>
       <Slider {...settings}>
@@ -86,7 +82,9 @@ const FlashCard = ({ addToCart, productItems }) => {
                       <div className="price">
                         <h4>Ksh {items.price}.00 </h4>
                         <button onClick={() => addToCart(items)}>
-                          <AiOutlinePlus />
+                          <Link to="login">
+                            <AiOutlinePlus />
+                          </Link>
                         </button>
                       </div>
                     </div>

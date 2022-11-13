@@ -1,77 +1,79 @@
-import { useState,useContext} from "react";
-import { UserContext } from "../../services/UserContext";
-import {useNavigate} from "react-router-dom";
+import styled from "styled-components";
+
+const Container = styled.div`
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(rgba(155, 155, 155, 0.2),rgba(155, 155, 155, 0.5)),url("https://tinyurl.com/2s3etx5z") center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+const Wrapper = styled.div`
+  width: 40%;
+  padding: 20px;
+  background-color: white;
+`;
+
+const Title = styled.h1`
+  font-size: 24px;
+  font-weight: 300;
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const Input = styled.input`
+  flex: 1;
+  min-width: 40%;
+  margin: 20px 10px 0px 0px;
+  padding: 10px;
+`;
+
+const Agreement = styled.span`
+  font-size: 12px;
+  margin: 20px 0px;
+`;
+
+const Button = styled.button`
+  width: 40%;
+  border: none;
+  padding: 15px 20px;
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+`;
+
 
 function Register(){
-const navigate=useNavigate()
-  const [name,setName]=useState("")
-  const [email,setEmail]=useState("")
-  const [error,setError]=useState("")
-  const {user,
-    setUser,
-    isLogin,
-    setLogin,
-    login,
-    register,
-    registerMessage,
-    message,
-    logout } =useContext(UserContext)
 
-    const handleSubmit=(e)=>{
+    const handleSubmit = (e)=>{
         e.preventDefault()
-        let username=name;
-        let useremail=email;
-        register(username,useremail)
-        setUser({id :null,name:username,email :useremail})
+        e.target.reset()
     }
     return (
-
-    <>
-    <div style={{
-        display :'flex',
-        justifyContent:'center',
-        margin:'auto'
-        }}>
-    <div style={
-        {
-            justifyContent:'center',
-            margin:'auto'
-        }}>
-    { !isLogin ?
-    <div style={{marginTop:'100px',marginBottom:'100px'}}>
-       <h1  style={{ display:'flex',justifyContent:'center',marginBottom:'20px'}}>Register</h1>
-       {registerMessage ?
-        <h2 style={{color:'gren'}}>{registerMessage}</h2> :null
-        }
-      <form style={{marginTop:'100',marginBottom:'100px'}} onSubmit={(e)=>handleSubmit(e)}> 
-      <div style={{display:'flex',fontSize:'15px',marginTop:'20px',marginBottom:'20px'}}>
-            <label style={{color:'green'}}> Name:   </label>
-      <input type="text" placeholder="Enter Name" value={name} onChange={(e) => setName(e.target.value)}/>
-      </div>
-      <div style={{display:'flex',fontSize:'15px',marginTop:'20px',marginBottom:'20px'}}>
-            <label style={{color:'green'}}>Email:  </label>
-      <input type="email" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
-      </div>
-      <div style={{marginTop:'20px',marginBottom:'20px'}}>
-      <input  style={{background:'red',color:'white'}} type="submit" value="Register"/>
-      </div>
-     </form>
-     </div>
-     : <h1>You are logged In as 
-
-        <p style={{color:'green'}}>
-            {user.email}
-        </p>
-        <button style={{fontSize:'large',color:'red'}}onClick={logout}>Logout</button>
-        </h1>
-    }
-
-    {
-        
-    }
-    </div>
-    </div>
-     </>
+      <>
+        <Container>
+          <Wrapper>
+            <Title>CREATE AN ACCOUNT</Title>
+            <Form onSubmit={handleSubmit}>
+              <Input placeholder="name" />
+              <Input placeholder="last name" />
+              <Input placeholder="username" />
+              <Input placeholder="email" />
+              <Input placeholder="password" />
+              <Input placeholder="confirm password" />
+              <Agreement>
+                By creating an account, I consent to the processing of my
+                personal data in accordance with the <b>PRIVACY POLICY</b>
+              </Agreement>
+              <Button>CREATE</Button>
+            </Form>
+          </Wrapper>
+        </Container>
+      </>
     );
 }
 export default Register;

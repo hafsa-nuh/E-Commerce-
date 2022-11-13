@@ -126,11 +126,25 @@ const Button = styled.button`
   font-weight: 600;
 `;
 
-const Cart = ({ cartItem, addToCart, decreaseQty }) => {
+const Cart = ({ cartItem, addToCart, decreaseQty, id, setCartItem }) => {
   const totalPrice = cartItem.reduce(
     (price, item) => price + item.quantity * item.price,
     0
   );
+  // delete for the products per customer oders
+  const deleteOrder = () => {
+    fetch(`https://aqueous-castle-47869.herokuapp.com/orders/${id}`, {
+      method: "DELETE",
+    })
+      .then((resp) => resp.json())
+      .then(() => {
+        const newOrders = cartItem.filter((order) => {
+          return order.id !== id;
+        });
+        setCartItem(newOrders)
+      });
+  };
+
   return (
     <Container>
       <Wrapper>
@@ -168,7 +182,7 @@ const Cart = ({ cartItem, addToCart, decreaseQty }) => {
                     </Details>
                     <div className="cart-items-function">
                       <div className="removeCart">
-                        <button className="removeCart">
+                        <button className="removeCart" onClick={deleteOrder} >
                           <TiDeleteOutline />
                         </button>
                       </div>
@@ -221,7 +235,6 @@ const Cart = ({ cartItem, addToCart, decreaseQty }) => {
           </Summary>
         </Bottom>
       </Wrapper>
-
     </Container>
   );
 };

@@ -26,6 +26,7 @@ const Pages = () => {
     .then((data) => setProductItems(data));
     }, []);
 
+   
 
   const [cartItem,setCartItem]=useState([])
 
@@ -74,6 +75,9 @@ const Pages = () => {
               cartItem={cartItem}
               addToCart={addToCart}
               decreaseQty={decreaseQty}
+              key={productItems.id}
+              {...productItems}
+              setCartItem={setCartItem}
             />
           }
         />

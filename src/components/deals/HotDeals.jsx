@@ -4,7 +4,7 @@ import { ImFire } from "react-icons/im";
 import "./style.css";
 
 
-const HotDeals = ({ addToCart }) => {
+const HotDeals = ({ addToCart, productItems }) => {
   return (
     <>
       <section className="flash">
@@ -15,7 +15,7 @@ const HotDeals = ({ addToCart }) => {
             </i>
             <h1>Hot Deals</h1>
           </div>
-          <FlashCard addToCart={addToCart} />
+          <FlashCard addToCart={addToCart} productItems={productItems} />
         </div>
       </section>
     </>

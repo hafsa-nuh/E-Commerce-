@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import {Routes,Route } from "react-router-dom";
 import Home from "../components/mainpage/Home";
 import About from '../components/about/About'
@@ -11,10 +11,22 @@ import Footer from "../components/footer/Footer"
 import Cart from "../components/addtocart/Cart"
 import Login from "../components/login/Login"
 import Register from "../components/register/Register"
+import ProductsDetails from "../components/products-details/ProductsDetails";
 
-
+// making the path global
+const url = "http://localhost:9292/products";
 const Pages = () => {
-  const [products,setProducts]=useState([])
+  // moved the fetchin here
+  const [productItems, setProductItems] = useState([]);
+    // Below is sample data
+  console.log(productItems);
+  useEffect(() => {
+    fetch(url)
+    .then((r) => r.json())
+    .then((data) => setProductItems(data));
+    }, []);
+
+
   const [cartItem,setCartItem]=useState([])
 
   const addToCart = (product) => {
@@ -46,49 +58,15 @@ const Pages = () => {
       );
     }
   };
-  
-
-
-//   const [cartModal,setCartModal]=useState(false)
- 
-//   const onAdd = (product) =>{
-//     const exist =cartItems.find(x => x.id === product.id);
-//     if(exist){
-//       setCartItems(cartItems.map(x => x.id === product.id ? {...exist, price: exist.price *2} : x))
-//     }else{
-//       setCartItems([...cartItems,{...product}])
-//     }
-
-//   }
-//   const onRemove = (product) =>{
-//     const exist =cartItems.find(x => x.id === product.id);
-//     const original=products.find(x=>x.id === product.id)
-//     if(exist.price <= original.price){
-//       setCartItems(cartItems.filter(x => x.id !== product.id))
-//     }else{
-//       setCartItems(cartItems.map(x => x.id === product.id ? {...exist, price: exist.price /2} : x))
-//     }
-   
-//   }
-
-//   const toggleCartModal = (value) => {
-//     if(!value){
-//       setCartModal(true)
-//     }else{
-//       setCartModal(false)
-//     }
-//   }
-// function getProducts(products){
-//   setProducts(products)
-// }
-
-// console.log(`From Page${products}`)
 
   return (
     <>
       <Header cartItem={cartItem} />
       <Routes>
-        <Route path="/" element={<Home addToCart={addToCart} />} />
+        <Route
+          path="/"
+          element={<Home addToCart={addToCart} productItems={productItems} />}
+        />
         <Route
           path="cart"
           element={
@@ -98,6 +76,10 @@ const Pages = () => {
               decreaseQty={decreaseQty}
             />
           }
+        />
+        <Route
+          path="product/:id"
+          element={<ProductsDetails url={url} />}
         />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />

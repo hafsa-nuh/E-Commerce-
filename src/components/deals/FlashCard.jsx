@@ -9,6 +9,7 @@ import {
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { NavLink } from "react-router-dom";
 
 const SampleNextArrow = (props) => {
   const { onClick } = props;
@@ -34,17 +35,7 @@ const SamplePrevArrow = (props) => {
 }
 
 
-const FlashCard = ({ addToCart }) => {
-  const [productItems, setProductItems] = useState([]);
-  // Below is sample data
-  //const [productItems, setProductItems] = useState(products_data);
-  console.log(productItems);
-  useEffect(() => {
-    fetch("http://localhost:9292/products")
-      .then((r) => r.json())
-      .then((data) => setProductItems(data));
-  }, []);
-
+const FlashCard = ({ addToCart, productItems }) => {
   const [count, setCount] = useState(0);
   const increment = () => {
     setCount(count + 1);
@@ -70,6 +61,9 @@ const FlashCard = ({ addToCart }) => {
                   <div className="product mtop" key={id}>
                     <div className="img">
                       <img src={items.image_url} alt={items.name} />
+                      <NavLink to={`product/${items.id}`} >
+                        <button className="btn">But Now</button>
+                      </NavLink>
                     </div>
                     <div className="product-details">
                       <div className="product-like">

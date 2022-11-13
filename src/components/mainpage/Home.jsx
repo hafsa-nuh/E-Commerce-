@@ -8,7 +8,7 @@ import NewArrivals from "../newarrivals/NewArrivals";
 import HotDeals from "../deals/HotDeals";
 import Discount from "../discount/Discount";
 import Annocument from "../announcement/Announce";
-const Home = ({addToCart}) => {
+const Home = ({ addToCart, productItems }) => {
   return (
     <>
       <section className="home">
@@ -17,7 +17,7 @@ const Home = ({addToCart}) => {
           <SliderHome />
         </div>
       </section>
-      <HotDeals addToCart={addToCart} />
+      <HotDeals addToCart={addToCart} productItems={productItems} />
       <NewArrivals />
       <Discount />
       <Annocument />

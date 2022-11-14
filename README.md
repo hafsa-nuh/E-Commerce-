@@ -53,6 +53,9 @@ It's a user-friendly E-commerce site that touches on almost every prior topics c
 * React
 * Ruby
 
+# Back-end Repo
+View [LIVE](https://github.com/Beulah-Matt/phase-3-project-sinatra-backend):
+
 ## Sinatra API backend
 to create a Sinatra API start with bundle install then if u have data in seed.rb , then run the server.
 ```bash
@@ -60,11 +63,6 @@ bundle install
 bundle exec rake db:migrate db:seed
 bundle exec rake server
 ```
-
-# Back-end Repo
-View [LIVE](https://github.com/Beulah-Matt/phase-3-project-sinatra-backend):
-
-
 
 ## How to deploy apps for free
 Deploying single react applications using Heroku and Vercel

@@ -14,10 +14,8 @@ View [LIVE](https://docs.google.com/presentation/d/1WhDjEp9l3l6LUlNj-c7CZr1zMDt_
 to access  this project on your local files, you can clone it using this steps
 
 ```bash
- Open the Terminal
-
+Open the Terminal
 Clone the repository:git@github.com:hafsa-nuh/interior-design-studio.git
-
 Change Directory: cd interior-design-studio
 
 npm install
@@ -63,16 +61,16 @@ bundle exec rake db:migrate db:seed
 bundle exec rake server
 ```
 
-### Back-end Repo
+# Back-end Repo
 View [LIVE](https://github.com/Beulah-Matt/phase-3-project-sinatra-backend):
 
 
 
-# How to deploy apps for free
+## How to deploy apps for free
 Deploying single react applications using Heroku and Vercel
 
 
-## To install Postgres
+### To install Postgres
 For this Project, we first had to install Postgres SQL as the database supported by our hosting service provider, Heroku.
 ```bash
 sudo apt update
@@ -105,7 +103,7 @@ gem "pg"
 ```
 
 
-## Single React App on Heroku
+### Single React App on Heroku
 1) Create a Heroku account/Log in using Heroku login.
 2) Create your app.
 3) Download Heroku CLI from [here](https://devcenter.heroku.com/articles/heroku-cli#download-and-install).
@@ -121,7 +119,7 @@ heroku rake db:migrate db:seed
 heroku open
 ```
 
-## Single React App on Vercel
+### Single React App on Vercel
 1) Create a Vercel account.
 2) Linking GitHub
 3) Continue with GitHub

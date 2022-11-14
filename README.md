@@ -126,8 +126,8 @@ heroku open
 
 
 ## LIVE SITE
+View [LIVE](http://e-commerce-bay.vercel.app/):
 
-http://e-commerce-bay.vercel.app/
 
 ## LICENSE
 

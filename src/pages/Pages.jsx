@@ -64,7 +64,7 @@ const Pages = () => {
 
   return (
     <>
-      <Header cartItem={cartItem} />
+      <Header productItems={productItems} cartItem={cartItem} />
       <Routes>
         <Route
           path="/"

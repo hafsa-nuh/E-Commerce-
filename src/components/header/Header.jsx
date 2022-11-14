@@ -3,10 +3,10 @@ import Nav from './Nav'
 import Search from './Search'
 import "./header.css"
 
-const Header = ({ cartItem }) => {
+const Header = ({ cartItem,productItems}) => {
   return (
     <>
-      <Search cartItem={cartItem} />
+      <Search productItems={productItems} cartItem={cartItem} />
       <Nav />
     </>
   );

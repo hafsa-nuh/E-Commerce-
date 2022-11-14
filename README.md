@@ -54,6 +54,14 @@ It's a user-friendly E-commerce site that touches on almost every prior topics c
 * React
 * Ruby
 
+## db.json
+to create a Sinatra API start with bundle install then if u have data in seed.rb , then run the server.
+```bash
+bundle install
+bundle exec rake db:migrate db:seed
+bundle exec rake server
+```
+
 ## LIVE SITE
 
 http://e-commerce-bay.vercel.app/

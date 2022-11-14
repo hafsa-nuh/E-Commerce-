@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { TiDeleteOutline } from "react-icons/ti";
 import "./cart.css";
+import { useEffect, useState } from "react";
 
 const Container = styled.div``;
 
@@ -125,25 +126,42 @@ const Button = styled.button`
   color: white;
   font-weight: 600;
 `;
-
-const Cart = ({ cartItem, addToCart, decreaseQty, id, setCartItem }) => {
+const url = "https://aqueous-castle-47869.herokuapp.com/orders";
+const Cart = ({ cartItem, addToCart, decreaseQty,  setCartItem }) => {
   const totalPrice = cartItem.reduce(
     (price, item) => price + item.quantity * item.price,
     0
   );
+  // fetch for orders
+  const [cartDelete, setCartDelete] = useState([])
+  console.log(cartDelete + "hope it works")
+  // const deleteProject = ()=>{
+  //   fetch(url)
+  //     .then((r) => r.json())
+  //     .then((data) => setCartDelete(data));
+  // }
+  // useEffect(()=>{
+  //   deleteProject()
+  // },[])
   // delete for the products per customer oders
-  const deleteOrder = () => {
-    fetch(`https://aqueous-castle-47869.herokuapp.com/orders/${id}`, {
+  useEffect(()=>{
+    deletOrderProject()
+  })
+  const deletOrderProject = async(id)=> {
+    const response = await fetch(`${url}/${id}`, {
       method: "DELETE",
     })
-      .then((resp) => resp.json())
-      .then(() => {
-        const newOrders = cartItem.filter((order) => {
-          return order.id !== id;
-        });
-        setCartItem(newOrders)
-      });
-  };
+    setCartDelete(await response.json())
+  }
+  // const deleteOrder = (id) => {
+  //   fetch(`${url}/${id}`, {
+  //     method: "DELETE",
+  //   })
+  //     .then((resp) => resp.json())
+  //     .then(() => {
+  //       deleteProject()
+  //     });
+  // };
 
   return (
     <Container>
@@ -182,7 +200,10 @@ const Cart = ({ cartItem, addToCart, decreaseQty, id, setCartItem }) => {
                     </Details>
                     <div className="cart-items-function">
                       <div className="removeCart">
-                        <button className="removeCart" onClick={deleteOrder} >
+                        <button
+                          className="removeCart"
+                          onClick={deletOrderProject}
+                        >
                           <TiDeleteOutline />
                         </button>
                       </div>

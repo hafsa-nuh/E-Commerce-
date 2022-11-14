@@ -58,7 +58,7 @@ const FlashCard = ({ addToCart, productItems }) => {
                     <div className="img">
                       <img src={items.image_url} alt={items.name} />
                       <NavLink to={`product/${items.id}`} >
-                        <button className="btn">But Now</button>
+                        <button className="btn">Buy Now</button>
                       </NavLink>
                     </div>
                     <div className="product-details">

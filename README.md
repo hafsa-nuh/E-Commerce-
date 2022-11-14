@@ -7,7 +7,8 @@ React & Ruby Project
 * Dennis Muturi ➪ frontend developer
 
 # Project Presentation
-https://docs.google.com/presentation/d/1WhDjEp9l3l6LUlNj-c7CZr1zMDt_dRZDOxHSxbPTfbE/edit#slide=id.g70c71c87bd_0_763 
+View [LIVE](https://docs.google.com/presentation/d/1WhDjEp9l3l6LUlNj-c7CZr1zMDt_dRZDOxHSxbPTfbE/edit#slide=id.g70c71c87bd_0_763 ):
+
 
 ## SETUP
 to access  this project on your local files, you can clone it using this steps

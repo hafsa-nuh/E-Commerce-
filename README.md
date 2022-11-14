@@ -64,11 +64,11 @@ bundle exec rake db:migrate db:seed
 bundle exec rake server
 ```
 
-## How to deploy apps for free
+# How to deploy apps for free
 Deploying single react applications using Heroku and Vercel
 
 
-### To install Postgres
+## To install Postgres
 For this Project, we first had to install Postgres SQL as the database supported by our hosting service provider, Heroku.
 ```bash
 sudo apt update
@@ -101,7 +101,7 @@ gem "pg"
 ```
 
 
-### Single React App on Heroku
+## Single React App on Heroku
 1) Create a Heroku account/Log in using Heroku login.
 2) Create your app.
 3) Download Heroku CLI from [here](https://devcenter.heroku.com/articles/heroku-cli#download-and-install).
@@ -117,7 +117,7 @@ heroku rake db:migrate db:seed
 heroku open
 ```
 
-### Single React App on Vercel
+## Single React App on Vercel
 1) Create a Vercel account.
 2) Linking GitHub
 3) Continue with GitHub

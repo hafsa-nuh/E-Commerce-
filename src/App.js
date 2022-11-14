@@ -26,7 +26,7 @@ function App() {
 
 
   const login =(name,email) =>{
-    fetch(`http://localhost:3000/users`)
+    fetch(`http://aqueous-castle-47869.herokuapp.com/customers`)
     .then(res=>res.json())
     .then(user=>{
      let exist=user.find((x)=>x.email === email)
@@ -44,7 +44,7 @@ function App() {
 
   const register = (username,useremail)=>{
 
-   fetch(`http://localhost:3000/users`, {
+   fetch(`http://aqueous-castle-47869.herokuapp.com/customers`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name: username,email:useremail })

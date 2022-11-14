@@ -1,10 +1,10 @@
-import React, {useContext} from "react";
+import React, {useContext,useState} from "react";
 import { FaSearch, FaUserAlt, FaShoppingCart } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link,NavLink } from "react-router-dom";
 import { UserContext } from "../../services/UserContext";
+const Search = ({ cartItem,productItems }) => {
 
-const Search = ({ cartItem }) => {
-
+  const [query, setQuery] = useState("")
   const {user} =useContext(UserContext)
 
   window.addEventListener("scroll", function () {
@@ -22,7 +22,11 @@ const Search = ({ cartItem }) => {
           </div>
           <div className="search-box f_flex">
             <FaSearch className="icons" />
-            <input type="text" placeholder="search and hit enter..." />
+            <input 
+            type="text" 
+            placeholder="search and hit enter..." 
+            onChange={event => setQuery(event.target.value)}
+            />
             <span> All Category </span>
           </div>
           <div className="icon f_flex width">
@@ -43,7 +47,54 @@ const Search = ({ cartItem }) => {
             </div>
           </div>
         </div>
+        <div style={{
+          
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            zIndex:'100'
+        }}>
+         <ul style={{zIndex:'5'}}>
+{
+productItems.filter(product => {
+if (query === "") {
+
+return null
+} else if (product.name.toLowerCase().includes(query.toLowerCase())) {
+//returns filtered array
+return product;
+}
+}).map((items, id) => {
+    return (
+      <div className="box">
+        <div className="product mtop" key={id}>
+          <div className="product-details">
+             {/**start of products details div */}
+             <div style={{display:'flex'}}>
+            <img  style={{width:'100px',height:'100px'}}url={items.image_url} alt={items.name}/>
+            <div className="paragra">
+              <p>{items.description}</p>
+            </div>
+            <div className="price">
+              <h4>Ksh {items.price}.00 </h4>
+            </div>
+            <NavLink to={`product/${items.id}`} >
+              <button onClick={()=>{setQuery("")}} className="btn">Buy Now</button>
+          </NavLink>
+             </div>
+          </div>{/**end of products details div */}
+        </div>
+      </div>
+    );
+  })
+}
+</ul>
+
+        </div>
       </section>
+    
+     
     </>
   );
 };

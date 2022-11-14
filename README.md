@@ -9,6 +9,22 @@ React & Ruby Project
 # Project Presentation
 https://docs.google.com/presentation/d/1WhDjEp9l3l6LUlNj-c7CZr1zMDt_dRZDOxHSxbPTfbE/edit#slide=id.g70c71c87bd_0_763 
 
+## SETUP
+to access  this project on your local files, you can clone it using this steps
+
+```bash
+ Open the Terminal
+
+Clone the repository:git@github.com:hafsa-nuh/interior-design-studio.git
+
+Change Directory: cd interior-design-studio
+
+npm install
+if u get an error when running npm start ,then run
+nvm install --lts
+open browser by running npm start
+```
+
 # The Idea
 It's a user-friendly E-commerce site that touches on almost every prior topics covered throughout the course.
 

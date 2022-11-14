@@ -15,14 +15,17 @@ to access  this project on your local files, you can clone it using this steps
 
 ```bash
 Open the Terminal
-Clone the repository:git@github.com:hafsa-nuh/interior-design-studio.git
-Change Directory: cd interior-design-studio
+Clone the repository:git@github.com:hafsa-nuh/E-Commerce-.git
+Change Directory: cd E-Commerce-
 
 npm install
+```
 if u get an error when running npm start ,then run
+```bash
 nvm install --lts
 open browser by running npm start
 ```
+
 
 # The Idea
 It's a user-friendly E-commerce site that touches on almost every prior topics covered throughout the course.
@@ -95,7 +98,7 @@ database: <%= ENV['DATABASE_NAME'] %>
 username: <%= ENV['DATABASE_USER'] %>
 password: <%= ENV['DATABASE_PASSWORD'] %>with this:
 ```
-Also added the postgres gem
+Also add the postgres gem
 ```bash
 gem "pg"
 ```

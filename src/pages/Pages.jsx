@@ -26,10 +26,6 @@ const Pages = () => {
     .then((data) => setProductItems(data));
     }, []);
 
- 
-
-   
-
   const [cartItem,setCartItem]=useState([])
 
   const addToCart = (product) => {

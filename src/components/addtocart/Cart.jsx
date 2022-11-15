@@ -127,41 +127,44 @@ const Button = styled.button`
   font-weight: 600;
 `;
 const url = "https://aqueous-castle-47869.herokuapp.com/orders";
+
 const Cart = ({ cartItem, addToCart, decreaseQty,  setCartItem }) => {
   const totalPrice = cartItem.reduce(
     (price, item) => price + item.quantity * item.price,
     0
   );
+  console.log(cartItem + "is it working" )
   // fetch for orders
   const [cartDelete, setCartDelete] = useState([])
   console.log(cartDelete + "hope it works")
-  // const deleteProject = ()=>{
-  //   fetch(url)
-  //     .then((r) => r.json())
-  //     .then((data) => setCartDelete(data));
-  // }
-  // useEffect(()=>{
-  //   deleteProject()
-  // },[])
-  // delete for the products per customer oders
+  const deleteProject = ()=>{
+    fetch(url)
+      .then((r) => r.json())
+      .then((data) => setCartDelete(data));
+  }
   useEffect(()=>{
-    deletOrderProject()
-  })
-  const deletOrderProject = async(id)=> {
-    const response = await fetch(`${url}/${id}`, {
+    deleteProject()
+  },[])
+  // delete for the products per customer oders
+  // useEffect(()=>{
+  //   deletOrderProject()
+  // })
+  // const deletOrderProject = async(id)=> {
+  //   // Cart.jsx:153  ==>> DELETE https://aqueous-castle-47869.herokuapp.com/orders/undefined 500 (Internal Server Error)
+  //   const response = await fetch(`${url}/${id}`, {
+  //     method: "DELETE",
+  //   });
+  //   setCartItem(await response.json());
+  // }
+  const deleteOrder = (id) => {
+    fetch(`${url}/${id}`, {
       method: "DELETE",
     })
-    setCartDelete(await response.json())
-  }
-  // const deleteOrder = (id) => {
-  //   fetch(`${url}/${id}`, {
-  //     method: "DELETE",
-  //   })
-  //     .then((resp) => resp.json())
-  //     .then(() => {
-  //       deleteProject()
-  //     });
-  // };
+      .then((resp) => resp.json())
+      .then(() => {
+        deleteProject()
+      });
+  };
 
   return (
     <Container>
@@ -202,7 +205,7 @@ const Cart = ({ cartItem, addToCart, decreaseQty,  setCartItem }) => {
                       <div className="removeCart">
                         <button
                           className="removeCart"
-                          onClick={deletOrderProject}
+                          onClick={() => {deleteOrder(item)}}
                         >
                           <TiDeleteOutline />
                         </button>
